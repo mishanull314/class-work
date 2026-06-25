@@ -1,4 +1,6 @@
-﻿void takeDamage(int* hp, int damage) {
+﻿#include <iostream>
+
+void takeDamage(int* hp, int damage) {
     if (*hp - damage < 0)
         *hp = 0;
     else
