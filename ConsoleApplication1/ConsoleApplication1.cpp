@@ -1,32 +1,22 @@
 ﻿#include <iostream>
 
 void takeDamage(int* hp, int damage) {
-    if (*hp - damage < 0)
-        *hp = 0;
-    else
-        *hp = *hp - damage;
-
+    *hp = *hp - damage;
+    if (*hp < 0) *hp = 0;     
 }
 
 void heal(int* hp, int amount) {
-    if (*hp + amount > 100)
-        *hp = 100;
-    else
-        *hp = *hp + amount;
+    *hp = *hp + amount;
+    if (*hp > 100) *hp = 100;       
 }
 
 bool isAlive(const int* hp) {
-    if (*hp > 0) return true;
-    else return false;
+    return (*hp > 0);
 }
 
 void openChest(int* gold, int* chest, int* hp) {
-    if (*chest == 0)
-    else
-    {
-        *gold += *chest;
-        *chest = 0;
-    }
+     *gold += *chest;
+     *chest = 0;
 }
 
 void swapChests(int* first, int* second) {
