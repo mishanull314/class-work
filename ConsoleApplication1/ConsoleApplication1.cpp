@@ -1,18 +1,13 @@
 ﻿#include <iostream>
 
 void takeDamage(int* hp, int damage) {
-    if (*hp - damage < 0)
-        *hp = 0;
-    else
-        *hp = *hp - damage;
-
+    *hp = *hp - damage;
+    if (*hp < 0) *hp = 0;
 }
 
 void heal(int* hp, int amount) {
-    if (*hp + amount > 100)
-        *hp = 100;
-    else
-        *hp = *hp + amount;
+    *hp = *hp + amount;
+    if (*hp > 100) *hp = 100;
 }
 
 void printHp(const int* hp) { std::cout << "HP: " << *hp << std::endl; }
